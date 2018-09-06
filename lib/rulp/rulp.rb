@@ -7,7 +7,7 @@ require_relative "constraint"
 require_relative "expression"
 
 require_relative "../solvers/solver"
-require_relative "../extensions/extensions"
+# require_relative "../extensions/extensions"
 require_relative "../helpers/log"
 
 require 'set'
@@ -156,6 +156,12 @@ module Rulp
 
     def output(filename=choose_file)
       IO.write(filename, self)
+    end
+
+    def _profile
+      start        = Time.now
+      return_value = yield
+      return return_value, Time.now - start
     end
 
     def solve_with(type, options={})

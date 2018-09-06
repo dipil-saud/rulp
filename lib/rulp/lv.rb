@@ -30,14 +30,7 @@ class LV
   end
 
   def self.definition(name, *args)
-    identifier = "#{name}#{args.join("_")}"
-    defined = LV::names_table["#{identifier}"]
-    case defined
-    when self then defined
-    when nil then self.new(name, args)
-    else raise StandardError.new("ERROR:\n#{name} was already defined as a variable of type #{defined.class}."+
-                              "You are trying to redefine it as a variable of type #{self}")
-    end
+    self.new(name, args)
   end
 
   def * (numeric)
