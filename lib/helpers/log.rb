@@ -16,7 +16,7 @@ module Rulp
     end
 
     def log_level
-      @@log_level || Logger::DEBUG
+      @@log_level || Logger::WARN
     end
 
     def log(level, message)

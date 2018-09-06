@@ -23,7 +23,7 @@ module Rulp
   attr_accessor :expressions
   extend Rulp::Log
   self.print_solver_outputs = true
-  self.log_level = Logger::DEBUG
+  self.log_level = Logger::WARN
   MIN = "Minimize"
   MAX = "Maximize"
 
