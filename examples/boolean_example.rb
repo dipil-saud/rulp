@@ -9,9 +9,9 @@ Rulp::log_level = Logger::INFO
 #
 ##
 
-items       = 50.times.map(&Shop_Item_b)
-items_count = items.sum
-items_costs = items.map{|item| item * Random.rand(1.0...5.0)}.sum
+items       = 50.times.map{|i| BV.new('Shop_Item', [i]) }
+items_count = items.reduce(&:+)
+items_costs = items.map{|item| item * Random.rand(1.0...5.0)}.reduce(&:+)
 
 Rulp::Min( items_costs ) [
   items_count  >= 10,

@@ -5,7 +5,7 @@ require 'rulp/version'
 Gem::Specification.new do |s|
   s.name        = 'rulp'
   s.version     = Rulp::VERSION
-  s.date        = Date.today
+  s.date        = '2018-09-06'
   s.summary     = "Ruby Linear Programming"
   s.description = "A simple Ruby LP description DSL"
   s.authors     = ["Wouter Coppieters"]
